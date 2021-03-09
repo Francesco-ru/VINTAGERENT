@@ -5,12 +5,16 @@ class CarPolicy < ApplicationPolicy
     end
   end
 
-  def show
+  def index?
+    true
+  end
+
+  def show?
     true
   end
 
   def create?
-    true if user?
+    true
   end
 
   def update?
