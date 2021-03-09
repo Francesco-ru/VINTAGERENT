@@ -7,3 +7,4 @@
 </div>
 <%= link_to "Edit", edit_car_path %>
 <%= link_to "Delete", car_path(@car.id), method: :delete, data: { confirm: "Are you sure ?"} %>
+<%= link_to "Reserve", new_car_booking_path(@car) %>
