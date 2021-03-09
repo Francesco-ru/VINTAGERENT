@@ -3,7 +3,8 @@ class CarsController < ApplicationController
   before_action :set_car, only: [:show, :edit, :update, :destroy]
 
   def index
-    @cars = Car.all
+    @cars = policy_scope(Car).all
+    authorize @cars
   end
 
   def show
@@ -11,10 +12,12 @@ class CarsController < ApplicationController
 
   def new
     @car = Car.new
+    authorize @car
   end
 
   def create
     @car = Car.new(car_params)
+    authorize @car
     # @car.user = current_user
     @car.user_id = current_user.id
     if @car.save
@@ -42,6 +45,7 @@ class CarsController < ApplicationController
 
   def set_car
     @car = Car.find(params[:id])
+    authorize @car
   end
 
   def car_params
