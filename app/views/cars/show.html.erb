@@ -1,0 +1,9 @@
+<div class="container text-center mt-6">
+
+  <%= @car.brand %>
+  <%= @car.description %>
+  <%= @car.price %>
+
+</div>
+<%= link_to "Edit", edit_car_path %>
+<%= link_to "Delete", car_path(@car.id), method: :delete, data: { confirm: "Are you sure ?"} %>
