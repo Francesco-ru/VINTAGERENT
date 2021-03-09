@@ -1,0 +1,9 @@
+<div class="form-new-car">
+  <h1>Add new car</h1>
+  <%= simple_form_for @car do |f| %>
+    <%= f.input :brand %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <%= f.submit %>
+  <% end %>
+</div>
