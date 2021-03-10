@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
 
   before_action :set_booking, only: [:show, :destroy]
+
   def new
     @car = Car.find(params[:car_id])
     @booking = Booking.new
