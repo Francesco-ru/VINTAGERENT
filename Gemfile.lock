@@ -238,6 +238,7 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
+  bcrypt
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
@@ -267,4 +268,4 @@ RUBY VERSION
    ruby 2.6.6p146
 
 BUNDLED WITH
-   2.2.6
+   2.2.14
