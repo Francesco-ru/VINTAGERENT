@@ -4,6 +4,14 @@ class CarsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @cars = policy_scope(Car).all
+    @markers = @cars.geocoded.map do |car|
+      {
+        lat: car.latitude,
+        lng: car.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { car: car }),
+        image_url: helpers.asset_url('car.svg')
+      }
+    end
   end
 
   def show
@@ -48,6 +56,6 @@ class CarsController < ApplicationController
   end
 
   def car_params
-    params.require(:car).permit(:brand, :description, :price, :user_id) #photo upload need to install cloudinary
+    params.require(:car).permit(:brand, :description, :price, :address) #photo upload need to install cloudinary
   end
 end
