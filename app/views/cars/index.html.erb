@@ -1,8 +1,29 @@
+<h1 class='text-center'>Cars available</h1>
+<div class='flex_div'>
+  <div>
+    <div class='cards mr-3'>
+      <% @cars.each do |car|%>
+      <div class="card-trip">
+        <img src="https://i.pinimg.com/originals/15/97/36/15973630a5f33cb9dcd5650b1e82e7c1.jpg" />
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= link_to car.brand, car_path(car.id) %></h2>
+              <p><%= car.description %></p>
+              <p><%= car.address %></p>
+            </div>
+            <h2 class="card-trip-pricing"><%= car.price %></h2>
+          </div>
+      </div>
+      <% end  %>
+  </div>
+    <%= link_to "add new car", new_car_path %>
+  </div>
 
-<% @cars.each do |car|%>
-  <%= link_to car.brand, car_path(car.id) %>
-  <%= car.description %>
-  <%= car.price %>
-<% end  %>
 
-<%= link_to "add new car", new_car_path %>
+
+  <div id="map"
+     style="width: 55%; height: auto;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+</div>
