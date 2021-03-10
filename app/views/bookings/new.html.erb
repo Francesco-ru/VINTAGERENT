@@ -1,8 +1,10 @@
-<div class="form">
-  <h1>Reserve</h1>
-  <%= simple_form_for [@car, @booking] do |f| %>
-    <%= f.input :start_time %>
-    <%= f.input :end_time %>
-    <%= f.submit %>
+<div class='container mt-5'>
+  <div class="form">
+    <h1>Reserve</h1>
+    <%= simple_form_for [@car, @booking] do |f| %>
+      <%= f.input :start_time %>
+      <%= f.input :end_time %>
+      <%= f.submit %>
   <% end %>
+  </div>
 </div>
