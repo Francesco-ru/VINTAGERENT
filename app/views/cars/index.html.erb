@@ -3,8 +3,11 @@
   <div>
     <div class='cards mr-3'>
       <% @cars.each do |car|%>
-      <div class="card-trip">
-        <img src="https://i.pinimg.com/originals/15/97/36/15973630a5f33cb9dcd5650b1e82e7c1.jpg" />
+
+        <div class="card-trip">
+          <% if car.photos.attached? %>
+            <%= cl_image_tag car.photos.first.key%>
+          <% end  %>
           <div class="card-trip-infos">
             <div>
               <h2><%= link_to car.brand, car_path(car.id) %></h2>
@@ -27,3 +30,6 @@
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
+
+
+

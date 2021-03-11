@@ -56,6 +56,6 @@ class CarsController < ApplicationController
   end
 
   def car_params
-    params.require(:car).permit(:brand, :description, :price, :address) #photo upload need to install cloudinary
+    params.require(:car).permit(:brand, :description, :price, :address, photos: []) #photo upload need to install cloudinary
   end
 end

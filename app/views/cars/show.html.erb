@@ -1,23 +1,22 @@
 <div class="container mt-6" style="background-color: white;">
+  <div class="show-image-container w-100">
+    <div id="carouselExampleControls" class="carousel slide w-100" data-ride="carousel">
 
-  <div class="show-image-container">
-
-    <div class="image-card">
-      <img alt="" src="https://supercarclubglobal.com/wp-content/uploads/2016/03/5219843272006-ferrari-testarossa.jpg" class="show-image">
+      <div class="carousel-inner w-100">
+        <% @car.photos.each.with_index do |photo, index| %>
+          <div class="carousel-item <%= index == 0 ? "active" : " " %>">
+            <%= cl_image_tag photo.key, class: "d-block carousel-img" %>
+          </div>
+        <% end %>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon btn-red" aria-hidden="true"></span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon btn-red" aria-hidden="true"></span>
+      </a>
     </div>
-
-    <div class="sub-image-card">
-      <img alt="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU2_sapjP76nZGaUXyn6rVTz_v8VvrMIZbcA&usqp=CAU" class="sub-image-top">
-      <img alt="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjPRsceA-5_fxcAUHCdWfmJaCD4x6CiHWLvw&usqp=CAU" class="sub-image">
-    </div>
-
-    <div class="sub-image-card">
-      <img alt="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu4wZb9C0BjQRBaP9unWBnjktsQFfN_vYyfA&usqp=CAU" class="sub-image-top">
-      <img alt="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7DpUfEmVC-wz6U4AfzMkolOkFuaA118X4RA&usqp=CAU" class="sub-image">
-    </div>
-
   </div>
-
   <div class="show-container">
 
       <div class="sub-container">
@@ -34,7 +33,6 @@
 
         </div>
       </div>
-
       <div class="sub-container-2">
         <div class="star-flex">
           <p> <strong><%= @car.price %>€/day </strong> </p>
@@ -46,7 +44,6 @@
       </div>
 
     </div>
-
-
-<%= link_to "Home page", root_path, class: "btn btn-primary mt-3" %>
+    <%= link_to "Home page", root_path, class: "btn btn-primary mt-3" %>
+  </div>
 </div>
