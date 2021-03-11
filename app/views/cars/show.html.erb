@@ -38,8 +38,6 @@
           <p> <strong><%= @car.price %>€/day </strong> </p>
           <p> <i class="fas fa-star"></i> 4.4(44)</p>
         </div>
-        <p> <%#= link_to "Edit", edit_car_path %> </p>
-        <p> <%#= link_to "Delete", car_path(@car.id), method: :delete, data: { confirm: "Are you sure ?"}, class:"btn btn-danger" %> </p>
         <p> <%= link_to "Reserve", new_car_booking_path(@car), class:"btn btn-reserve" %> </p>
       </div>
 
