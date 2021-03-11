@@ -4,7 +4,6 @@ class PagesController < ApplicationController
   end
 
   def profile
-    console
     @bookings = current_user.bookings
     @cars = current_user.cars
   end
