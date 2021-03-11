@@ -10,7 +10,18 @@
 </div>
 <div class="banner-content">
   <h1 id= "phrase" class="mt-5">Book your dream car in one click</h1>
-  <%= link_to "Fancy a car", cars_path, class: "btn btn-ghost mt-3"%>
+
+  <div class='searchbar mt-4'>
+  <%= form_tag cars_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a car"
+    %>
+    <%= submit_tag "Search", class: "btn btn-ghost mt-3" %>
+  <% end %>
+</div>
+
 </div>
 
   <div class="footer navbar-fixed-bottom">

@@ -3,14 +3,26 @@ class CarsController < ApplicationController
   before_action :set_car, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @cars = policy_scope(Car).all
-    @markers = @cars.geocoded.map do |car|
-      {
-        lat: car.latitude,
-        lng: car.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { car: car }),
-        image_url: helpers.asset_url('car.svg')
-      }
+    if params[:query].present?
+      @cars = policy_scope(Car).search_by_brand_and_description(params[:query])
+      @markers = @cars.geocoded.map do |car|
+        {
+          lat: car.latitude,
+          lng: car.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { car: car }),
+          image_url: helpers.asset_url('car.svg')
+        }
+      end
+    else
+      @cars = policy_scope(Car).all
+      @markers = @cars.geocoded.map do |car|
+        {
+          lat: car.latitude,
+          lng: car.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { car: car }),
+          image_url: helpers.asset_url('car.svg')
+        }
+      end
     end
   end
 
