@@ -1,38 +1,21 @@
 <div class= "home-page">
 
-<div class="navbar">
-<h1>VINTAGE <br/>RENTAL<br/></h1>
-  <ul>
-    <li>about us</li>
-    <li>help</li>
-    <%= link_to "log-out", destroy_user_session_path, method: :delete %>
-  </ul>
-</div>
 <div class="banner-content">
-  <h1 id= "phrase" class="mt-5">Book your dream car in one click</h1>
+  <h1 class='banner_title' id="phrase" class="mt-5">Book your dream car in one click</h1>
 
   <div class='searchbar mt-4'>
-  <%= form_tag cars_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find a car"
-    %>
-    <%= submit_tag "Search", class: "btn btn-ghost mt-3" %>
-  <% end %>
+    <%= form_tag cars_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control search_bar",
+        placeholder: "Find a car"
+      %>
+      <%= submit_tag "Search", class: "btn search_btn mt-3 ml-2" %>
+    <% end %>
 </div>
 
 </div>
 
-  <div class="footer navbar-fixed-bottom">
-    <ul class="footer-icons">
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-    </ul>
-    <div class="footer-copyright">
-      <p>ipiscing  incidunt ut. Adipiscing nisi, egestas proin nulla morbi pellentesque sed aliquam fermentum.</p>
-    </div>
-  </div>
+
 
 </div>
