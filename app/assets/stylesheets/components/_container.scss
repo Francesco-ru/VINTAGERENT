@@ -74,18 +74,18 @@
 
 .profile-main-container {
   display: flex;
-  justify-content: center;
-  padding: 9%;
-  margin: 2% auto;
+  justify-content: space-around;
+  padding: 20px;
+  margin: 20px 100px;
 }
 
 .profile-container {
   text-align: center;
   border-radius: 3px;
-  border: solid 1px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  // border: solid 1px;
+  box-shadow: 0 0 3px rgba(0,0,0,.1);
   padding: 1.5%;
-  margin-right: 5%;
+  margin-right: 20px;
 
   .profile-color {
     background-color: navy;
@@ -98,23 +98,30 @@
 }
 
 .profile-dashboard {
-  justify-content: space-evenly;
+  display: flex;
 }
 
 .profile-bookings {
-  display: flex;
-  border: solid 1px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.1);
-  margin-bottom: 2%;
+  // border: solid 1px;
+  margin-right: 30px;
+  box-shadow: 0 0 3px rgba(0,0,0,.1);
+  margin-bottom: 20px;
   border-radius: 3px;
 }
 
+.profile-bookings > ul {
+  display: flex;
+}
+.profile-bookings > ul > li {
+  margin: 10px;
+}
 .profile-listings {
-  margin-top: 7%;
-  display: flex;
-  border: solid 1px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  margin-top: 10px;
+  // border: solid 1px;
+
   border-radius: 3px;
 }
 
-
+.my_car {
+  box-shadow: 0 0 3px rgba(0,0,0,.1);
+}

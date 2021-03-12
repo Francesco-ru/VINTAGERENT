@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
     @booking.user_id = current_user.id
     authorize @booking
     if @booking.save
-      redirect_to car_booking_path(@car, @booking)
+      redirect_to profile_path
     else
       render :new
     end
