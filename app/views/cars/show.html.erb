@@ -40,7 +40,9 @@
           <div class="container-dates">
             <div class='container mt-5'>
               <div class="form">
+
               <h1 class='mb-3' style="font-family: 'Poppins', sans-serif; font-weight: 700; color: rgb(220,100,100);">Reserve</h1>
+
                 <%= simple_form_for [@car, @booking] do |f| %>
                   <%= f.input :start_time, as: :string, input_html: {class: "datepicker"} %>
                   <%= f.input :end_time, as: :string, input_html: {class: "datepicker"} %>

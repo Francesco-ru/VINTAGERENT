@@ -30,7 +30,31 @@
 }
 
 
+// Profile page
 
+.profile-card {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
 
+.car-image {
+  border-radius: 3px;
+  padding: 10px;
+}
 
+.profile-car-info{
+  align-items: flex-start !important;
+}
+
+.car-info {
+   h3, a {
+    color: #2C0309;
+    font-family: 'Poppins', sans-serif;
+   }
+   p {
+    font-size: 18px !important;
+    color: #A6703D;
+   }
+}
 
