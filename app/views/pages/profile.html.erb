@@ -68,25 +68,16 @@
 
             </div>
             <% end %>
+            <% else %>
+              <%= link_to "Add a car", new_car_path, class:"btn btn-primary"  %>
           <% end %>
         </div>
       </div>
 
 
 
-<!--           <% if @bookings.exists? %>
-            <%  @bookings.each do |booking| %>
-            <ul>
-              <li><%= booking.car.brand %></li>
-              <li><%= booking.start_time %></li>
-              <li><%= booking.end_time %></li>
-              <li><%= booking.total_price %></li>
-            </ul>
-            <% end %>
 
-           <% else %>
 
-          <% end %> -->
 
 </div>
 

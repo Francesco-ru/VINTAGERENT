@@ -14,32 +14,52 @@
 
   .brand {
     border-radius: 3px;
-    border: solid 1px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.1);
+    box-shadow: 0 0 3px rgba(0,0,0,.1);
     margin-bottom: 1%;
     padding-left: 5%;
     padding-top: 1.5%;
+    background-color: white;
+  }
+
+  .brand > h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    color: #A6703D;
+  }
+
+  .brand > p {
+    font-family: poppins;
+    color: rgb(150,150,150);
   }
 
   .show-description {
     border-radius: 3px;
-    border: solid 1px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.1);
+    box-shadow: 0 0 3px rgba(0,0,0,.1);
     padding: 5%;
+    background-color: white;
 
     .icons {
       width: 5%;
     }
   }
+
+  .show-description > p {
+    font-family: poppins;
+    margin-bottom: 25px;
+    font-size: x-large;
+  }
 }
+
+
 
 .sub-container-2 {
   width: 28%;
   border-radius: 3px;
-  border: solid 1px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  box-shadow: 0 0 3px rgba(0,0,0,.1);
   padding: 1.5%;
   text-align: center;
+  background-color: white;
 
   .star-flex {
     display: flex;
@@ -56,9 +76,8 @@
 
 
 .container-dates {
-  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  box-shadow: 0 0 3px rgba(0,0,0,.1);
   border-radius: 3px;
-  border: solid 1px;
   padding: 1.5%;
 }
 
