@@ -1,39 +1,80 @@
-  <div class="profile-container">
-    <div class="profile-color">
-      <img style="" />
-      <img class="user-pic avatar-large" alt="avatar-bordered" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyXdrnKJ-RzQAk5KfzDiLsDtGuWHu9WouvaA&usqp=CAU" />
-    </div>
-      <p> <%= current_user.name %> </p>
-      <p> <%= current_user.address %> </p>
-  </div>
+
+
+<div class="add-car-button">
+  <%= link_to new_car_path, class:"btn btn-add-car" do   %>
+    <i class="fas fa-car-alt"></i> Add Car
+  <% end %>
+</div>
+
 <div class="profile-main-container">
 
+    <div>
+      <h3>My Profile</h3>
 
+      <div class="profile-container">
+        <div class="">
+          <img class='avatar-bordered' src="https://i.pinimg.com/originals/51/f6/fb/51f6fb256629fc755b8870c801092942.png">
+        </div>
+
+        <div class="user-details">
+          <p> <i class="fas fa-signature"></i> <%= current_user.name %> </p>
+          <p> <i class="fas fa-map-marked"></i> <%= current_user.address %> </p>
+          <p> <i class="fas fa-at"></i> <%= current_user.email %> </p>
+        </div>
+
+          <div class="my-bookings">
+            <h2>My Bookings</h2>
+            <% current_user.bookings.each do |booking| %>
+             <p> <%= booking.car.brand %> - <%= booking.start_time %> </p>
+            <% end %>
+          </div>
+      </div>
+
+    </div>
 
         <div class='mr-5'>
-        <h3>Listings</h3>
+        <h3>My Cars</h3>
         <div class="profile-listings">
 
           <% if @cars.exists? %>
             <% @cars.each do |car|  %>
-            <div class="card-trip my_car mt-2">
+            <div class="card-trip my_car mt-2 profile-card">
               <% if car.photos.attached? %>
-                <%= cl_image_tag car.photos.first.key%>
+                <%= cl_image_tag car.photos.first.key, class:"car-image" %>
               <% end  %>
-              <div class="card-trip-infos">
-                <div>
-                  <h2><%= link_to car.brand, car_path(car.id) %></h2>
+              <div class="card-trip-infos profile-car-info">
+                <div class="car-info">
+                  <h3><%= link_to car.brand, car_path(car.id) %></h3>
+                  <p><%= car.description  %></p>
                 </div>
               </div>
+
+                <div class="profile-bookings">
+                  <ul>
+                    <%  car.bookings.each do |booking| %>
+                      <li>
+                       <p> <i class="far fa-user-circle"></i> <%= booking.user.name %> </p>
+                       <p> <i class="far fa-calendar-alt"></i> <%= booking.start_time %> - <%= (booking.end_time - booking.start_time).to_i %> days </p>
+                       <p> <i class="fas fa-euro-sign"></i> <%= booking.total_price %> </p>
+                     </li>
+                    <% end %>
+                  </ul>
+                </div>
+
+                <div class="action">
+                  <%= link_to "Edit", edit_car_path(car), class:"btn btn-profile-see"  %>
+                  <%= link_to "Delete", car_path(car), method: :delete, remote: true, class:"btn btn-profile-delete"  %>
+                </div>
+
             </div>
             <% end %>
           <% end %>
         </div>
       </div>
-      <div>
-        <h3>Bookings</h3>
-        <div class="profile-bookings">
-          <% if @bookings.exists? %>
+
+
+
+<!--           <% if @bookings.exists? %>
             <%  @bookings.each do |booking| %>
             <ul>
               <li><%= booking.car.brand %></li>
@@ -44,11 +85,8 @@
             <% end %>
 
            <% else %>
-            <%= link_to "Add car", new_car_path, class:"btn btn-primary"  %>
-          <% end %>
 
-        </div>
-      </div>
-      </div>
+          <% end %> -->
+
 </div>
 
