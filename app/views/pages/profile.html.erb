@@ -55,7 +55,8 @@
                       <li>
                        <p> <i class="far fa-user-circle"></i> <%= booking.user.name %> </p>
                        <p> <i class="far fa-calendar-alt"></i> <%= booking.start_time %> - <%= (booking.end_time - booking.start_time).to_i %> days </p>
-                       <p> <i class="fas fa-euro-sign"></i> <%= booking.total_price %> </p>
+                       <!-- <p> <i class="fas fa-euro-sign"></i> <%= booking.total_price %> </p> -->
+                       <p> <i class="fas fa-euro-sign"></i> <%= (car.price * (booking.end_time - booking.start_time).to_i).to_i %> </p>
                      </li>
                     <% end %>
                   </ul>
