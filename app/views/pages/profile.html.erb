@@ -1,53 +1,53 @@
-<h1>Profile</h1>
-<div class='flex_div'>
 
+  <div class="profile-main-container">
 
-  <div class="sub-container-2">
-      <img class="avatar-large" alt="avatar-bordered" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyXdrnKJ-RzQAk5KfzDiLsDtGuWHu9WouvaA&usqp=CAU" />
+    <div class="profile-container">
+      <div class="profile-color">
+        <img style="" />
+        <img class="user-pic avatar-large" alt="avatar-bordered" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyXdrnKJ-RzQAk5KfzDiLsDtGuWHu9WouvaA&usqp=CAU" />
+      </div>
+          <p> <%= current_user.name %> </p>
+          <p> <%= current_user.address %> </p>
+          <p> <%= current_user.email %> </p>
 
-        <%= current_user.name %>
-        <%= current_user.address %>
-        <%= current_user.email %>
-
-  </div>
-
-  <div class='  '>
-
-    <div class="sub-container-2">
-      <h3>Bookings</h3>
-
-      <% if @bookings.exists? %>
-
-        <%  @bookings.each do |booking| %>
-          <%= booking.car.brand %>
-          <%= booking.car.description %>
-          <%= booking.car.price %>
-          <%= booking.start_time %>
-          <%= booking.end_time %>
-          <%= booking.total_price %>
-        <% end %>
-
-       <% else %>
-        <%= link_to "Would you like to book a car?", new_car_path %>
-      <% end %>
+          <%= link_to "Home", root_path, class: "btn btn-primary" %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
     </div>
 
+
+    <div class="profile-dashboard">
+
+        <div class="profile-bookings">
+          <h3>Bookings</h3>
+
+          <% if @bookings.exists? %>
+            <%  @bookings.each do |booking| %>
+              <%= booking.car.brand %>
+              <%= booking.car.description %>
+              <%= booking.car.price %>
+              <%= booking.start_time %>
+              <%= booking.end_time %>
+              <%= booking.total_price %>
+            <% end %>
+
+           <% else %>
+            <%= link_to "Add car", new_car_path, class:"btn btn-primary"  %>
+          <% end %>
+
+        </div>
+
+
+        <div class="profile-listings">
+          <h3>Listings</h3>
+          <% if @cars.exists? %>
+            <% @cars.each do |car|  %>
+              <%= car.brand %>
+              <%= car.description %>
+              <%= car.price %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
   </div>
-
-  <div class="sub-container-2">
-    <h3>Listings</h3>
-
-    <% if @cars.exists? %>
-      <% @cars.each do |car|  %>
-        <%= car.brand %>
-        <%= car.description %>
-        <%= car.price %>
-      <% end %>
-
-    <% end %>
-
-  </div>
-
-
-
 </div>

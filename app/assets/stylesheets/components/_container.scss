@@ -1,8 +1,9 @@
+// Car show page
+
 .show-container {
   display: flex;
   justify-content: space-between;
 }
-
 
 .show-main-container {
   margin: 2% auto;
@@ -12,7 +13,7 @@
   width: 68%;
 
   .brand {
-    border-radius: 5px;
+    border-radius: 3px;
     border: solid 1px;
     box-shadow: 0 10px 30px rgba(0,0,0,.1);
     margin-bottom: 1%;
@@ -21,7 +22,7 @@
   }
 
   .show-description {
-    border-radius: 5px;
+    border-radius: 3px;
     border: solid 1px;
     box-shadow: 0 10px 30px rgba(0,0,0,.1);
     padding: 5%;
@@ -34,7 +35,7 @@
 
 .sub-container-2 {
   width: 28%;
-  border-radius: 5px;
+  border-radius: 3px;
   border: solid 1px;
   box-shadow: 0 10px 30px rgba(0,0,0,.1);
   padding: 1.5%;
@@ -53,7 +54,67 @@
   margin-top: 1%;
 }
 
+
+.container-dates {
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  border-radius: 3px;
+  border: solid 1px;
+  padding: 1.5%;
+}
+
+// Search bar
+
 .searchbar {
   display: flex;
   justify-content: center;
 }
+
+
+//  Profile Page
+
+.profile-main-container {
+  display: flex;
+  justify-content: center;
+  padding: 9%;
+  margin: 2% auto;
+}
+
+.profile-container {
+  text-align: center;
+  border-radius: 3px;
+  border: solid 1px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  padding: 1.5%;
+  margin-right: 5%;
+
+  .profile-color {
+    background-color: navy;
+  }
+
+  .user-pic {
+    position: top;
+  }
+
+}
+
+.profile-dashboard {
+  justify-content: space-evenly;
+}
+
+.profile-bookings {
+  display: flex;
+  border: solid 1px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  margin-bottom: 2%;
+  border-radius: 3px;
+}
+
+.profile-listings {
+  margin-top: 7%;
+  display: flex;
+  border: solid 1px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  border-radius: 3px;
+}
+
+
