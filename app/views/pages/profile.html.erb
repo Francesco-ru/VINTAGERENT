@@ -1,33 +1,46 @@
-
-  <div class="profile-main-container">
-
-    <div class="profile-container">
-      <div class="profile-color">
-        <img style="" />
-        <img class="user-pic avatar-large" alt="avatar-bordered" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyXdrnKJ-RzQAk5KfzDiLsDtGuWHu9WouvaA&usqp=CAU" />
-      </div>
-          <p> <%= current_user.name %> </p>
-          <p> <%= current_user.address %> </p>
-          <p> <%= current_user.email %> </p>
-
-          <%= link_to "Home", root_path, class: "btn btn-primary" %>
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+  <div class="profile-container">
+    <div class="profile-color">
+      <img style="" />
+      <img class="user-pic avatar-large" alt="avatar-bordered" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyXdrnKJ-RzQAk5KfzDiLsDtGuWHu9WouvaA&usqp=CAU" />
     </div>
+      <p> <%= current_user.name %> </p>
+      <p> <%= current_user.address %> </p>
+  </div>
+<div class="profile-main-container">
 
 
-    <div class="profile-dashboard">
 
+        <div class='mr-5'>
+        <h3>Listings</h3>
+        <div class="profile-listings">
+
+          <% if @cars.exists? %>
+            <% @cars.each do |car|  %>
+            <div class="card-trip my_car mt-2">
+              <% if car.photos.attached? %>
+                <%= cl_image_tag car.photos.first.key%>
+              <% end  %>
+              <div class="card-trip-infos">
+                <div>
+                  <h2><%= link_to car.brand, car_path(car.id) %></h2>
+                </div>
+              </div>
+            </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <div>
+        <h3>Bookings</h3>
         <div class="profile-bookings">
-          <h3>Bookings</h3>
-
           <% if @bookings.exists? %>
             <%  @bookings.each do |booking| %>
-              <%= booking.car.brand %>
-              <%= booking.car.description %>
-              <%= booking.car.price %>
-              <%= booking.start_time %>
-              <%= booking.end_time %>
-              <%= booking.total_price %>
+            <ul>
+              <li><%= booking.car.brand %></li>
+              <li><%= booking.start_time %></li>
+              <li><%= booking.end_time %></li>
+              <li><%= booking.total_price %></li>
+            </ul>
             <% end %>
 
            <% else %>
@@ -35,19 +48,7 @@
           <% end %>
 
         </div>
-
-
-        <div class="profile-listings">
-          <h3>Listings</h3>
-          <% if @cars.exists? %>
-            <% @cars.each do |car|  %>
-              <%= car.brand %>
-              <%= car.description %>
-              <%= car.price %>
-            <% end %>
-          <% end %>
-        </div>
       </div>
-
-  </div>
+      </div>
 </div>
+
