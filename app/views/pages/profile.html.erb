@@ -27,6 +27,8 @@
               </div>
             </div>
             <% end %>
+            <% else %>
+              <%= link_to "Add a car", new_car_path, class:"btn btn-primary"  %>
           <% end %>
         </div>
       </div>
@@ -44,9 +46,8 @@
             <% end %>
 
            <% else %>
-            <%= link_to "Add car", new_car_path, class:"btn btn-primary"  %>
+            <%= link_to "Looking for cars", cars_path, class:"btn btn-primary"  %>
           <% end %>
-
         </div>
       </div>
       </div>
