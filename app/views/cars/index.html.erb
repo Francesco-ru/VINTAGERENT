@@ -1,20 +1,24 @@
-<h1 class='text-center'>Cars available</h1>
-<div>
-  <%= form_tag cars_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find a car"
-    %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
+
+<div class="banner-index" style="background-image: url(https://images.unsplash.com/photo-1506469717960-433cebe3f181?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);">
+  <h1 class='text-center'>Book the best car for your week-end at milan</h1>
+  <div class ="banner-content-index">
+    <form>
+      <%= form_tag cars_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "searchbar-index",
+          placeholder: "Find a car"
+        %>
+        <%= submit_tag "Search", class: "search-btn" %>
+      <% end %>
+    </form>
+  </div>
 </div>
 
 <div class='flex_div'>
   <div>
     <div class='cards mr-3'>
       <% @cars.each do |car|%>
-
         <div class="card-trip">
           <% if car.photos.attached? %>
             <%= cl_image_tag car.photos.first.key%>
@@ -30,16 +34,12 @@
       </div>
       <% end  %>
   </div>
-    <%= link_to "add new car", new_car_path %>
   </div>
-
-
-
-  <div id="map"
-     style="width: 65%; height: auto;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
+<div id="map"
+   style="width: 75%; height: auto;"
+   data-markers="<%= @markers.to_json %>"
+   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
 </div>
 
 

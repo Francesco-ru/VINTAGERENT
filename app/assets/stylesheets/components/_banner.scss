@@ -3,4 +3,65 @@
   padding-top: 300px;
 }
 
+.banner-index {
+width: 100%;
+height: 309px;
+background-size: cover;
+}
+
+.text-center {
+padding-top: 70px;
+font-family: 'Poppins', sans-serif;
+font-weight: 700;
+font-size: 28px;
+color: white;
+letter-spacing: 2px;
+}
+
+.banner-content-index {
+margin-top: 0;
+padding-top: 10px;
+}
+
+.banner-content-index > form {
+margin-top: 0;
+padding-top: 20px;
+display: inline-flex;
+flex: 1 1 300px;
+position: relative;
+border-radius: 3px;
+overflow: hidden;
+font-family: 'Poppins', sans-serif;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+
+
+
+}
+
+.searchbar-index{
+border: 0;
+padding: 0.5rem 0.5rem 0.5rem 0;
+margin-right: 10px;
+flex: 1;
+width: 500px;
+border-radius: 3px;
+}
+
+.search-btn {
+  background:#A6703D;
+  border: 0;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 3px;
+  width: 100px;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+
+
 

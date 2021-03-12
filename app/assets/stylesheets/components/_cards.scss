@@ -2,33 +2,61 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 3px;
 }
 
 .card-trip > img {
   height: 200px;
   width: 100%;
   object-fit: cover;
+
 }
 
 .card-trip h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  color: #A6703D;
+  text-transform: uppercase;
 }
 
 .card-trip p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
   font-size: 12px;
   opacity: .7;
   margin: 0;
+
 }
 
 
-.card-trip .card-trip-infos {
+.card-trip-infos {
   padding: 16px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+  color: gray;
+}
+
+.card-trip-infos h2 a {
+font-family: 'Poppins', sans-serif;
+font-weight: 700;
+font-size: 16px;
+font-weight: bold;
+margin: 0;
+text-decoration: none;
+color:#A6703D;
+
+
+}
+
+.card-trip-infos h2 a:hover {
+text-decoration: none;
+
+
 }
 
 .card-trip-infos .card-trip-user {
