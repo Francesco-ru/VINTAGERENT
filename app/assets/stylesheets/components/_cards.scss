@@ -20,6 +20,8 @@
   margin: 0;
   color: #A6703D;
   text-transform: uppercase;
+  display: flex;
+  align-items: baseline;
 }
 
 .card-trip p {
@@ -39,6 +41,11 @@
   align-items: flex-end;
   position: relative;
   color: gray;
+
+}
+
+.card-trip-infos > div {
+  width: 80%;
 }
 
 .card-trip-infos h2 a {
